@@ -1,14 +1,18 @@
+
 package edu.macalester.comp124.life;
 
 /**
- * RuleSet implementing Conway's Game of Life.
+ * RuleSet implementing HighLife's Game of Life.
  *
  * @author Michael Ekstrand <ekstrand@cs.umn.edu>
  */
-public class Conway implements RuleSet {
+
+
+
+public class HighLife implements RuleSet {
 
     public String getName() {
-        return "Conway's Rules";
+        return "HighLife's Rules";
     }
 
     /**
@@ -21,12 +25,15 @@ public class Conway implements RuleSet {
     public boolean applyRules(boolean isAlive , int neighborCount) {
 
         if (isAlive == true && neighborCount < 2){
-        return false;
+            return false;
         }
         else if(isAlive == true && neighborCount >3){
             return false;
         }
         else if(isAlive == false && neighborCount == 3){
+            return true;
+        }
+        else if(isAlive == false && neighborCount == 6){
             return true;
         }
 
@@ -39,24 +46,6 @@ public class Conway implements RuleSet {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
